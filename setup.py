@@ -3,13 +3,13 @@ from distutils.core import setup
 setup(
     name='EHR Functions',
     packages=['ehr_functions'],
-    version='0.1',
+    version='0.1.0',
     license='MIT',
-    description='Scraping in python made easy - receive the content you like in just one line of code!',
+    description='A library for EHR related functions.',
     author='Filip Dabek',
     url='https://github.com/fdabek1/ehr-functions',
-    download_url='https://github.com/joelbarmettlerUZH/Scrapeasy/archive/pypi-0_1_3.tar.gz',
-    keywords=['scraping', 'easy', 'scraper', 'website', 'download', 'links', 'images', 'videos'],
+    download_url='https://github.com/fdabek1/ehr-functions/archive/pypi-0_1_0.tar.gz',
+    keywords=['ehr', 'functions', 'library'],
     install_requires=[
         'numpy',
         'pandas',
