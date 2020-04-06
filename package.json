@@ -1,0 +1,27 @@
+{
+  "name": "ehr-functions",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vuepress": "^1.4.0"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdabek1/EHR-Functions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fdabek1/EHR-Functions/issues"
+  },
+  "homepage": "https://github.com/fdabek1/EHR-Functions#readme"
+}

@@ -1,12 +1,13 @@
-# EHR-Functions
+---
+sidebarDepth: 2
+---
 
-## What is this?
-
-A library containing useful EHR related functions for use within Python data analysis.
+# Usage
 
 ## Installation
 
-> pip install ehr-functions
+> pip install ehr_functions
+
 
 ## Example
 
@@ -34,3 +35,6 @@ Output
 |     3     |     27     |       1       |         0        |         0        |         1        |
 |     4     |     24     |       0       |         1        |         0        |         0        |
 
+## Data Structure & Assumptions
+
+There are some assumptions that are made about the structure of your data.
