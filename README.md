@@ -2,11 +2,17 @@
 
 ## What is this?
 
-A library containing useful EHR related functions for use within Python data analysis.
+A library containing useful EHR related functions for use within Python data analysis, especially within Jupyter notebooks.
+
+When utilizing Jupyter notebooks for processing data and training models I found myself copying the same code between notebooks.  This code consisted of steps to split my data, create a model, compute some metrics, etc.; and thus the notebooks became very long with little focus on the actual analysis.  Therefore, this set of functions were created to allow for a focus on analysis and to abstract away the process of cleaning data and running models.
 
 ## Installation
 
 > pip install ehr-functions
+
+## Documentation
+
+The documentation can be found at: https://fdabek1.github.io/ehr-functions/
 
 ## Example
 

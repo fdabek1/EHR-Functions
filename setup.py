@@ -11,8 +11,10 @@ setup(
     download_url='https://github.com/fdabek1/ehr-functions/archive/pypi-0_1_0.tar.gz',
     keywords=['ehr', 'functions', 'library'],
     install_requires=[
+        'keras',
         'numpy',
         'pandas',
+        'scikit-learn',
     ],
     classifiers=[  # Optional
         # How mature is this project? Common values are

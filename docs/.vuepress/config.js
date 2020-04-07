@@ -18,9 +18,32 @@ module.exports = {
         'demographics',
         // 'equation',
       ],
-      '/models/': [
-        //
-      ],
+      '/models/':
+        [
+          {
+            title: 'General',
+            collapsable: false,
+            children: [
+              'train_model',
+            ]
+          },
+          {
+            title: 'Types',
+            collapsable: false,
+            children: [
+              'types/base',
+              'types/sklearn',
+              'types/adaboost',
+              'types/elastic_net',
+              'types/linear_regression',
+              'types/logistic_regression',
+              'types/nn',
+              'types/random_forest',
+              'types/sgd',
+              'types/svm',
+            ]
+          },
+        ],
     }
   }
 };
