@@ -8,7 +8,7 @@ setup(
     description='A library for EHR related functions.',
     author='Filip Dabek',
     url='https://github.com/fdabek1/ehr-functions',
-    download_url='https://github.com/fdabek1/ehr-functions/archive/pypi-0_1_0.tar.gz',
+    download_url='https://github.com/fdabek1/ehr-functions/archive/v0.1.0.tar.gz',
     keywords=['ehr', 'functions', 'library'],
     install_requires=[
         'keras',
