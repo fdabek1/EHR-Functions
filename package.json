@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fdabek1/EHR-Functions.git"
+    "url": "git+https://github.com/fdabek1/ehr-functions.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fdabek1/EHR-Functions/issues"
+    "url": "https://github.com/fdabek1/ehr-functions/issues"
   },
-  "homepage": "https://github.com/fdabek1/EHR-Functions#readme"
+  "homepage": "https://github.com/fdabek1/ehr-functions#readme"
 }
