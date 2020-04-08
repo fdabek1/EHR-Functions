@@ -2,7 +2,9 @@
 
 ## get_features
 
-> demographics.get_features(df, cols=None)
+```python
+demographics.get_features(df, cols=None)
+```
 
 ### Arguments
 

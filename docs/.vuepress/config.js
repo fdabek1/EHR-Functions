@@ -15,8 +15,9 @@ module.exports = {
     ],
     sidebar: {
       '/features/': [
+        'codes',
         'demographics',
-        // 'equation',
+        'windows',
       ],
       '/models/':
         [
