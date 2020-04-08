@@ -1,6 +1,8 @@
-# train_model
+# train\_model
 
-> models.train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, return_results=False, print_results=True)
+```python
+models.train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, return_results=False, print_results=True)
+```
 
 This function trains a given model using train/val data.
 

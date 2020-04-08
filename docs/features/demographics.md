@@ -1,6 +1,6 @@
 # Demographics
 
-## get_features
+## get\_features
 
 ```python
 demographics.get_features(df, cols=None)

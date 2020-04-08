@@ -1,6 +1,6 @@
 # Codes
 
-## get_nth_occurrence
+## get\_nth\_occurrence
 
 ```python
 codes.get_nth_occurrence(df, codes, nth=0)
@@ -46,7 +46,7 @@ print(dates.head())
 |     2     |   2020-01-01  |
 
 
-## tag_had_code
+## tag\_had\_code
 
 ```python
 codes.tag_had_code(df, name, codes, nth=None)

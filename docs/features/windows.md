@@ -1,6 +1,6 @@
 # Windows
 
-## calculate_days
+## calculate\_days
 
 ```python
 windows.calculate_days(df, name, date_ref)
@@ -77,7 +77,7 @@ print(features.head())
 |     1     |   2020-01-18  |     D     |     11     |
 |     1     |   2020-01-30  |     C     |     23     |
 
-## build_windows
+## build\_windows
 
 ```python
 windows.build_windows(df, windows, flip_negative=False)
