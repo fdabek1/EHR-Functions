@@ -13,6 +13,7 @@ module.exports = {
       {text: 'Features', link: '/features/'},
       {text: 'Models', link: '/models/'},
     ],
+    displayAllHeaders: true,
     sidebar: {
       '/features/': [
         'codes',
