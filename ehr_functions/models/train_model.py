@@ -88,7 +88,7 @@ def __get_x_y(df, features, outcome):
 def train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, metrics=None, return_preds=False):
     if isinstance(model, str):
         model_mod = __import__('ehr_functions.models.types', fromlist=[model])
-        model = getattr(model_mod, model)
+        model = getattr(model_mod, model)()
 
     if metrics is None:
         metrics = []
