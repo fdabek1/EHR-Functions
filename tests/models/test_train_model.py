@@ -24,8 +24,8 @@ def test_train_model_simple():
         'Over30': [0, 0, 1, 0],
     })
 
-    model, results = train_model(FakeModel(), df, 'Over30', features=['PatientAge'], return_results=True)
-    train_pred, val_pred = results
+    model, preds = train_model(FakeModel(), df, 'Over30', features=['PatientAge'], return_preds=True)
+    train_pred, val_pred = preds
     np.testing.assert_array_equal(train_pred, np.asarray([0, 1]))
     np.testing.assert_array_equal(val_pred, np.asarray([0]))
 
@@ -40,8 +40,8 @@ def test_train_model_simple_type():
         'Type': ['train', 'train', 'val', 'test'],
     })
 
-    model, results = train_model(FakeModel(), df, 'Over30', features=['PatientAge'], return_results=True)
-    train_pred, val_pred = results
+    model, preds = train_model(FakeModel(), df, 'Over30', features=['PatientAge'], return_preds=True)
+    train_pred, val_pred = preds
     np.testing.assert_array_equal(train_pred, np.asarray([0, 0]))
     np.testing.assert_array_equal(val_pred, np.asarray([1]))
 
@@ -57,8 +57,8 @@ def test_train_model_multiple_output():
         'Type': ['train', 'train', 'val', 'test'],
     })
 
-    model, results = train_model(FakeModel(), df, ['Over30', 'Under30'], features=['PatientAge'], return_results=True)
-    train_pred, val_pred = results
+    model, preds = train_model(FakeModel(), df, ['Over30', 'Under30'], features=['PatientAge'], return_preds=True)
+    train_pred, val_pred = preds
     np.testing.assert_array_equal(train_pred[0], np.asarray([0, 0]))
     np.testing.assert_array_equal(train_pred[1], np.asarray([0, 0]))
 

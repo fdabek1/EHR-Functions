@@ -86,10 +86,12 @@ def __get_x_y(df, features, outcome):
 
 
 def train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, metrics=None, return_preds=False):
-    if metrics is not None and not isinstance(metrics, list):
-        metrics = [metrics]
+    if metrics is None:
+        metrics = []
+    else:
+        if not isinstance(metrics, list):
+            metrics = [metrics]
 
-    if metrics is not None:
         metrics = [metric if not inspect.isclass(metric) else metric() for metric in metrics]
 
     if features is None:
