@@ -10,7 +10,7 @@ def get_features(df, cols=None):
     df = df.drop_duplicates('PatientID', keep='first')
 
     # Select demographics and patient id
-    df = df[cols + ['PatientID']]
+    df = df[['PatientID'] + cols]
 
     # Convert columns that are not numbers and more than two categories into separate columns
     df = make_numeric(df, cols=cols)
