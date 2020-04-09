@@ -80,7 +80,7 @@ print(features.head())
 ## build\_windows
 
 ```python
-windows.build_windows(df, windows, flip_negative=False)
+windows.build_windows(df, windows, days_ref, flip_negative=False)
 ```
 
 A common technique to count the number of encounters that occur within each window/timeframe.  This method expects for a column that exist that contains the number of days since an event, where 0 is the event of interest to relate against.

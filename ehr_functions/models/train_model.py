@@ -86,12 +86,21 @@ def __get_x_y(df, features, outcome):
 
 
 def train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, metrics=None, return_preds=False):
+    if isinstance(model, str):
+        model_mod = __import__('ehr_functions.models.types', fromlist=[model])
+        model = getattr(model_mod, model)
+
     if metrics is None:
         metrics = []
     else:
         if not isinstance(metrics, list):
             metrics = [metrics]
 
+        def __str_to_metric(string):
+            mod = __import__('ehr_functions.models.metrics', fromlist=[string])
+            return getattr(mod, string)
+
+        metrics = [metric if not isinstance(metric, str) else __str_to_metric(metric) for metric in metrics]
         metrics = [metric if not inspect.isclass(metric) else metric() for metric in metrics]
 
     if features is None:
@@ -142,3 +151,7 @@ def train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None,
             return model, preds
 
         return model
+
+
+if __name__ == '__main__':
+    train_model(None, None, None, metrics=['BinaryClassification'])

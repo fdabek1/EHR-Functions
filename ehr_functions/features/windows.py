@@ -4,7 +4,7 @@ import pandas as pd
 def calculate_days(df, name, date_ref):
     if isinstance(date_ref, pd.DataFrame):
         date_ref = date_ref.set_index('PatientID')
-        date_ref = date_ref.to_dict()['InjuryDate']
+        date_ref = date_ref.to_dict()[date_ref.columns.tolist()[0]]
         df[name + 'Days'] = (df['EncounterDate'] - df['PatientID'].map(date_ref)).dt.days
         return df
 
@@ -27,6 +27,7 @@ def build_windows(df, windows, days_ref, flip_negative=False):
             temp = window[0]
             windows[w][0] = window[1] * -1
             windows[w][1] = temp * -1
+        windows = windows[::-1]
 
     df = df[['PatientID', days_ref]]
 
@@ -47,19 +48,7 @@ def build_windows(df, windows, days_ref, flip_negative=False):
     for w in range(len(windows)):
         df['Window' + '_' + str(w)] = (df['WindowIndex'] == w).astype(int)
 
-    df = df.drop(columns=['EventDays', 'WindowIndex'])
+    df = df.drop(columns=[days_ref, 'WindowIndex'])
     df = df.groupby(['PatientID']).sum().reset_index()
 
     return df
-
-
-if __name__ == '__main__':
-    df = pd.DataFrame({
-        'PatientID': [1, 1, 1, 1],
-        'EventDays': [0, 5, 9, 15],
-        'Diagnosis1': ['A', 'F', 'D', 'C'],
-        'Diagnosis2': [None, 'B', 'B', 'A'],
-        'Diagnosis3': [None, None, 'C', 'A'],
-    })
-
-    print(build_windows(df, [[0, 10], [10, 30]], 'EventDays'))

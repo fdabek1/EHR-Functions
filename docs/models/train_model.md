@@ -10,7 +10,7 @@ If outcome is multiple and the model does not support multiple output then an en
 
 ## Arguments
 
-- **model:** A Model instance.
+- **model:** A Model instance. Optionally can be a String to save an import statement, if using default parameters.
  
 - **df:** Pandas DataFrame containing patients and the features to utilize.
 
@@ -24,7 +24,7 @@ If outcome is multiple and the model does not support multiple output then an en
 
 - **data_type:** An optional Pandas DataFrame containing a column named *Type* with the values `train`, `val`, or `test`, indicating which dataset the patient belongs in.  To use this feature, the *outcome* cannot be a Pandas Series due to inability to correctly reference patients.
 
-- **metrics:** A list of [metrics](metrics/base.md) for the model to be evaluated against and to be printed out.
+- **metrics:** A list of [metrics](metrics/base.md) for the model to be evaluated against and to be printed out.  Optionally can be a String to save an import statement, if using default parameters.
  
 - **return_preds:** Whether to return the model predictions.  If enabled then returns a tuple containing the train and val predictions.
 
