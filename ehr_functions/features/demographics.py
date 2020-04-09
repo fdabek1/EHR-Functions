@@ -13,6 +13,6 @@ def get_features(df, cols=None):
     df = df[cols + ['PatientID']]
 
     # Convert columns that are not numbers and more than two categories into separate columns
-    df, _ = make_numeric(df, cols=cols)
+    df = make_numeric(df, cols=cols)
 
     return df

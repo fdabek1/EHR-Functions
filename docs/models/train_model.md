@@ -1,7 +1,7 @@
 # train\_model
 
 ```python
-models.train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, return_results=False, print_results=True)
+models.train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, metrics=None, return_preds=False)
 ```
 
 This function trains a given model using train/val data.
@@ -23,10 +23,10 @@ If outcome is multiple and the model does not support multiple output then an en
     - **Pandas DataFrame:** For multiple output scenarios, each column should be an output. 
 
 - **data_type:** An optional Pandas DataFrame containing a column named *Type* with the values `train`, `val`, or `test`, indicating which dataset the patient belongs in.  To use this feature, the *outcome* cannot be a Pandas Series due to inability to correctly reference patients.
- 
-- **return_results:** Whether to print the results of the model
 
-- **print_results:** Whether to return the predicted values
+- **metrics:** A list of [metrics](metrics/base.md) for the model to be evaluated against and to be printed out.
+ 
+- **return_preds:** Whether to return the model predictions.  If enabled then returns a tuple containing the train and val predictions.
 
 
 ## Returns

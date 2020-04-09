@@ -15,6 +15,11 @@ module.exports = {
     ],
     displayAllHeaders: true,
     sidebar: {
+      '/usage/': [
+        'installation',
+        'assumptions',
+        'examples',
+      ],
       '/features/': [
         'codes',
         'demographics',
@@ -27,6 +32,15 @@ module.exports = {
             collapsable: false,
             children: [
               'train_model',
+            ]
+          },
+          {
+            title: 'Metrics',
+            collapsable: false,
+            children: [
+              'metrics/base',
+              'metrics/binary_classification',
+              'metrics/roc_curve',
             ]
           },
           {

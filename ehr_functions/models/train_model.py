@@ -1,12 +1,7 @@
 from sklearn.model_selection import train_test_split
-# from ehr_functions.visualization.visualize import show_results
 import pandas as pd
-import numpy as np
+import inspect
 import copy
-
-
-def show_results(*kwargs):
-    pass
 
 
 def __split(x, y):
@@ -90,8 +85,13 @@ def __get_x_y(df, features, outcome):
     return x_train, x_val, y_train, y_val
 
 
-def train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None,
-                return_results=False, print_results=True):
+def train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None, metrics=None, return_preds=False):
+    if metrics is not None and not isinstance(metrics, list):
+        metrics = [metrics]
+
+    if metrics is not None:
+        metrics = [metric if not inspect.isclass(metric) else metric() for metric in metrics]
+
     if features is None:
         features = [col for col in df.columns if col != 'PatientID']
         if isinstance(outcome, str):
@@ -116,21 +116,27 @@ def train_model(model, df: pd.DataFrame, outcome, features=None, data_type=None,
         for col in outcome:
             x_train, x_val, y_train, y_val = __get_x_y(df, features, col)
 
-            m, results = __train_model(copy.deepcopy(model), (x_train, y_train), (x_val, y_val))
+            m, preds = __train_model(copy.deepcopy(model), (x_train, y_train), (x_val, y_val))
             models.append(m)
 
-            train_pred.append(results[0])
-            val_pred.append(results[1])
+            train_pred.append(preds[0])
+            val_pred.append(preds[1])
 
-        if return_results:
+            for metric in metrics:
+                metric.post_train((y_train, preds[0]), (y_val, preds[1]))
+
+        if return_preds:
             return models, (train_pred, val_pred)
 
         return models
     else:
         x_train, x_val, y_train, y_val = __get_x_y(df, features, outcome)
 
-        model, results = __train_model(model, (x_train, y_train), (x_val, y_val))
-        if return_results:
-            return model, results
+        model, preds = __train_model(model, (x_train, y_train), (x_val, y_val))
+        for metric in metrics:
+            metric.post_train((y_train, preds[0]), (y_val, preds[1]))
+
+        if return_preds:
+            return model, preds
 
         return model
