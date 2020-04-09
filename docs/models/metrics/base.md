@@ -16,7 +16,7 @@ Gets called after the model is fit.
 
 ## Utilization
 
-Metrics can be passed in one of two ways: class type and class instance.
+Metrics can be passed in one of three ways: class type, string, and class instance.
 
 ### Class Type
 
@@ -28,6 +28,17 @@ from ehr_functions.models.types import LogisticRegression
 from ehr_functions.models.metrics import BaseMetric
 
 train_model(LogisticRegression(), features, df[['PatientID', 'Over30']], metrics=[BaseMetric])
+```
+
+### String
+
+In this scenario, the metric was passed using a string.  The class type will automatically be found, and this reduces the need to import the class. 
+
+```python
+from ehr_functions.models import train_model
+from ehr_functions.models.types import LogisticRegression
+
+train_model(LogisticRegression(), features, df[['PatientID', 'Over30']], metrics=['BaseMetric'])
 ```
 
 ### Class Instance
