@@ -1,4 +1,4 @@
-PatientID,PatientAge,PatientGender,PatientService
+PatientID,PatientAge,PatientGender,PatientCategory
 1,48,M,B
 2,95,F,C
 3,92,M,C

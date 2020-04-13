@@ -20,7 +20,7 @@ def test_train_model_simple():
         'PatientID': [1, 2, 3, 4],
         'PatientAge': [21, 27, 35, 24],
         'PatientGender': ['M', 'F', 'M', 'F'],
-        'PatientService': ['A', 'B', 'C', 'A'],
+        'PatientCategory': ['A', 'B', 'C', 'A'],
         'Over30': [0, 0, 1, 0],
     })
 
@@ -35,7 +35,7 @@ def test_train_model_simple_type():
         'PatientID': [1, 2, 3, 4],
         'PatientAge': [21, 27, 35, 24],
         'PatientGender': ['M', 'F', 'M', 'F'],
-        'PatientService': ['A', 'B', 'C', 'A'],
+        'PatientCategory': ['A', 'B', 'C', 'A'],
         'Over30': [0, 0, 1, 0],
         'Type': ['train', 'train', 'val', 'test'],
     })
@@ -51,7 +51,7 @@ def test_train_model_multiple_output():
         'PatientID': [1, 2, 3, 4],
         'PatientAge': [21, 27, 35, 24],
         'PatientGender': ['M', 'F', 'M', 'F'],
-        'PatientService': ['A', 'B', 'C', 'A'],
+        'PatientCategory': ['A', 'B', 'C', 'A'],
         'Over30': [0, 0, 1, 0],
         'Under30': [1, 1, 0, 1],
         'Type': ['train', 'train', 'val', 'test'],
@@ -76,7 +76,7 @@ def test_train_model_multiple_output():
 #         'PatientID': [1, 1, 2, 3, 4],
 #         'PatientAge': [21, 21, 35, 27, 24],
 #         'PatientGender': ['M', 'M', 'F', 'M', 'F'],
-#         'PatientService': ['A', 'A', 'B', 'C', 'A'],
+#         'PatientCategory': ['A', 'A', 'B', 'C', 'A'],
 #     })
 #
 #     model = train_model(FakeModel())

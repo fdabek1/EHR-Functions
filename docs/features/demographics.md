@@ -10,7 +10,7 @@ demographics.get_features(df, cols=None)
 
 - **df:** Pandas DataFrame
  
-- **cols:** A list of the columns to extract. Defaults to ['PatientAge', 'PatientGender', 'PatientService', 'PatientPayGrade'].
+- **cols:** A list of the columns to extract. Defaults to ['PatientAge', 'PatientGender', 'PatientCategory'].
 
 
 ### Returns

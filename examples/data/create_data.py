@@ -30,14 +30,14 @@ def basic(n=1000):
         'PatientID': [],
         'PatientAge': [],
         'PatientGender': [],
-        'PatientService': [],
+        'PatientCategory': [],
     }
 
     for i in range(1, n + 1):
         data['PatientID'].append(i)
         data['PatientAge'].append(random.randint(18, 100))
         data['PatientGender'].append(random.choice(['M', 'F']))
-        data['PatientService'].append(random.choice(['A', 'B', 'C']))
+        data['PatientCategory'].append(random.choice(['A', 'B', 'C']))
 
     df = pd.DataFrame(data)
     df.to_csv('basic.csv', index=False)
@@ -48,7 +48,7 @@ def encounters(n=1000):
         'PatientID': [],
         'PatientAge': [],
         'PatientGender': [],
-        'PatientService': [],
+        'PatientCategory': [],
         'EncounterDate': [],
         'Diagnosis1': [],
         'Diagnosis2': [],
@@ -58,14 +58,14 @@ def encounters(n=1000):
     for i in range(1, n + 1):
         age = random.randint(18, 100)
         gender = random.choice(['M', 'F'])
-        service = random.choice(['A', 'B', 'C'])
+        category = random.choice(['A', 'B', 'C'])
         for _ in range(random.randint(2, 15)):  # Random number of encounters
             date = random_date('01/01/2015', '12/31/2019')
             year = int(date[-4:])
             data['PatientID'].append(i)
             data['PatientAge'].append(age + (year - 2015))
             data['PatientGender'].append(gender)
-            data['PatientService'].append(service)
+            data['PatientCategory'].append(category)
             data['EncounterDate'].append(date)
             data['Diagnosis1'].append(random.choice(['A', 'B', 'C']) + random.choice(['A', 'B', 'C']))
             data['Diagnosis2'].append(random.choice(['A', 'B', 'C']) + random.choice(['A', 'B', 'C']))

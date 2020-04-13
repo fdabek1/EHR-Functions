@@ -3,7 +3,7 @@ from ehr_functions.utils import make_numeric
 
 def get_features(df, cols=None):
     if cols is None:
-        cols = ['PatientAge', 'PatientGender', 'PatientService', 'PatientPayGrade']
+        cols = ['PatientAge', 'PatientGender', 'PatientCategory']
         cols = [col for col in cols if col in df.columns]
 
     # Drop duplicates based off PatientID

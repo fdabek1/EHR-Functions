@@ -1,4 +1,4 @@
-PatientID,PatientAge,PatientGender,PatientService,EncounterDate,Diagnosis1,Diagnosis2,Diagnosis3
+PatientID,PatientAge,PatientGender,PatientCategory,EncounterDate,Diagnosis1,Diagnosis2,Diagnosis3
 1,31,M,C,08/14/2015,AA,AC,CC
 1,33,M,C,12/01/2017,AC,AC,BC
 1,35,M,C,03/12/2019,BB,AC,CB
