@@ -1,4 +1,4 @@
-from ehr_functions.features import codes
+from ehr_functions.features import occurrence
 import pandas as pd
 
 
@@ -11,7 +11,7 @@ def test_nth_occurrence():
         'Diagnosis3': [None, None, 'C', 'A'],
     })
     df['EncounterDate'] = pd.to_datetime(df['EncounterDate'])
-    dates = codes.get_nth_occurrence(df, 'B')
+    dates = occurrence.get_nth_occurrence(df, 'B')
 
     result = pd.DataFrame({
         'PatientID': [1, 2],

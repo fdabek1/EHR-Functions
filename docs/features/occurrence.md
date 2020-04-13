@@ -1,9 +1,9 @@
-# Codes
+# Occurrence
 
 ## get\_nth\_occurrence
 
 ```python
-codes.get_nth_occurrence(df, codes, nth=0)
+occurrence.get_nth_occurrence(df, codes, nth=0)
 ```
 
 ### Arguments
@@ -24,7 +24,7 @@ codes.get_nth_occurrence(df, codes, nth=0)
 ### Example
 
 ```python
-from ehr_functions.features import codes
+from ehr_functions.features import occurrence
 import pandas as pd 
 
 df = pd.DataFrame({
@@ -36,7 +36,7 @@ df = pd.DataFrame({
 })
 df['EncounterDate'] = pd.to_datetime(df['EncounterDate'])
 
-dates = codes.get_nth_occurrence(df, 'B')
+dates = occurrence.get_nth_occurrence(df, 'B')
 print(dates.head())
 ```
 
@@ -49,7 +49,7 @@ print(dates.head())
 ## tag\_had\_code
 
 ```python
-codes.tag_had_code(df, name, codes, nth=None)
+occurrence.tag_had_code(df, name, codes, nth=None)
 ```
 
 Helper method to tag a list of encounters with whether or not a patient had a code.
@@ -74,7 +74,7 @@ Helper method to tag a list of encounters with whether or not a patient had a co
 ### Example
 
 ```python
-from ehr_functions.features import codes
+from ehr_functions.features import occurrence
 import pandas as pd 
 
 df = pd.DataFrame({
@@ -86,7 +86,7 @@ df = pd.DataFrame({
 })
 df['EncounterDate'] = pd.to_datetime(df['EncounterDate'])
 
-dates = codes.get_nth_occurrence(df, 'B')
+dates = occurrence.get_nth_occurrence(df, 'B')
 print(dates.head())
 ```
 
