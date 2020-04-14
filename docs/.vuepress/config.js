@@ -21,6 +21,7 @@ module.exports = {
         'examples',
       ],
       '/features/': [
+        'codes',
         'demographics',
         'occurrence',
         'windows',
