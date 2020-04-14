@@ -31,8 +31,6 @@ dems = demographics.get_features(df)
 print(dems.head())
 ```
 
-Output
-
 | PatientID | PatientAge | PatientGender | PatientCategory_A | PatientCategory_B | PatientCategory_C |
 |:---------:|:----------:|:-------------:|:-----------------:|:-----------------:|:-----------------:|
 |     1     |     21     |       1       |         1         |         0         |         0         |
