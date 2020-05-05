@@ -4,7 +4,7 @@ from setuptools import find_packages
 setup(
     name='ehr-functions',
     packages=find_packages(),
-    version='0.2.2',
+    version='0.2.3',
     license='MIT',
     description='A library for EHR related functions.',
     long_description=open('README.md').read(),
@@ -13,6 +13,7 @@ setup(
     url='https://github.com/fdabek1/ehr-functions',
     download_url='https://github.com/fdabek1/ehr-functions/archive/v0.1.0.tar.gz',
     keywords=['ehr', 'functions', 'library'],
+    include_package_data=True,
     install_requires=[
         'keras',
         'numpy',

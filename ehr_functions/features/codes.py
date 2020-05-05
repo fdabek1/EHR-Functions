@@ -1,7 +1,7 @@
-import importlib.resources as pkg_resources
-from ehr_functions import files
-from ehr_functions.files import ccs
+from .. import files
 import pandas as pd
+import pkgutil
+import io
 
 
 def simplify(df, n=3, cols=None):
@@ -34,7 +34,8 @@ def __convert(df, cols, source, target):
         cols = ['Diagnosis1', 'Diagnosis2', 'Diagnosis3']
         cols = [col for col in cols if col in df.columns]
 
-    table = pd.read_csv(pkg_resources.open_text(files, 'icd9toicd10cmgem.csv'), dtype={'icd9cm': str, 'icd10cm': str})
+    table = pd.read_csv(io.BytesIO(pkgutil.get_data(__name__, '../files/icd9toicd10cmgem.csv')),
+                        dtype={'icd9cm': str, 'icd10cm': str})
     table = table[[source, target]]
     table = table.set_index(source)
     mapping = table.to_dict()[target]
@@ -63,11 +64,12 @@ def convert_to_icd9(df, cols=None):
 
 def get_ccs_mapping(name, level=None, code_type=10, data_type='dx'):
     if code_type == 10:
-        table = pd.read_csv(pkg_resources.open_text(ccs, 'icd10_' + data_type + '.csv'), quotechar="'", dtype=str)
+        table = pd.read_csv(io.BytesIO(pkgutil.get_data(__name__, '../files/ccs/icd10_' + data_type + '.csv')),
+                            quotechar="'", dtype=str)
     elif code_type == 9:
         multi = '' if level is None else '_multi'
-        table = pd.read_csv(pkg_resources.open_text(ccs, 'icd9_' + data_type + multi + '.csv'), quotechar="'",
-                            dtype=str)
+        table = pd.read_csv(io.BytesIO(pkgutil.get_data(__name__, '../files/ccs/icd9_' + data_type + multi + '.csv')),
+                            quotechar="'", dtype=str)
         table['code'] = table['code'].str.strip()
         if 'single' in table.columns:
             table['single'] = table['single'].str.strip()
