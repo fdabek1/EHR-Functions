@@ -1,9 +1,10 @@
 from setuptools import setup
+from setuptools import find_packages
 
 setup(
     name='ehr-functions',
-    packages=['ehr_functions'],
-    version='0.2.0',
+    packages=find_packages(),
+    version='0.2.2',
     license='MIT',
     description='A library for EHR related functions.',
     long_description=open('README.md').read(),

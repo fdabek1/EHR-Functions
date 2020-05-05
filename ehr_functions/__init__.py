@@ -1,6 +1,6 @@
-from .features import *
-from .files import *
-from .models import *
-from .utils import *
+from . import features
+from . import files
+from . import models
+from . import utils
 
-__version__ = '0.2.0'
+__version__ = '0.2.2'
